@@ -1,0 +1,10 @@
+[Unit]
+Description=Postgres Exporter
+
+[Service]
+User=postgres
+EnvironmentFile=-/etc/default/postgres_exporter
+ExecStart=/usr/bin/postgres_exporter 
+
+[Install]
+WantedBy=default.target

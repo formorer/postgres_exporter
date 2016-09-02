@@ -24,6 +24,10 @@ test:
 test-integration:
 	tests/test-smoke
 
+rpm: postgres_exporter
+	@echo ">> building rpm"
+	@rpmbuild -bb --define "_sourcedir $(CURDIR)" --define "_rpmdir $(CURDIR)" --define "_build_name_fmt %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm" postgres_exporter.spec
+
 # Do a self-contained docker build - we pull the official upstream container,
 # then template out a dockerfile which builds the real image.
 docker-build: postgres_exporter
