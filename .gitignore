@@ -1,8 +1,14 @@
 .build
 postgres_exporter
+postgres_exporter_integration_test
 *.tar.gz
 *.test
 *-stamp
 .idea
 *.iml
 *.rpm
+cover.out
+cover.*.out
+.coverage
+*.prom
+.metrics.*.*.prom
